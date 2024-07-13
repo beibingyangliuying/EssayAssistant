@@ -39,18 +39,21 @@ namespace EssayAssistant.Forms
             {
                 var cell = enumerator.Current;
                 cell.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalBottom;
-                var range = doc.Range(cell.Range.Start, cell.Range.Start);
-                var field = range.Fields.Add(
+                cell.Range.InsertBefore("(");
+                cell.Range.InsertAfter(")");
+
+                var range = doc.Range(cell.Range.Start + 1, cell.Range.Start + 1);
+                var field = cell.Range.Fields.Add(
                     range,
                     Word.WdFieldType.wdFieldSequence,
                     @"子图 \* alphabetic"
                 );
+                cell.Range.InsertParagraphBefore();
+
                 range = field.Result;
-                range.InsertBefore("(");
-                range.InsertAfter(")");
-                range.InsertParagraphBefore();
                 range.set_Style(doc.Styles[Word.WdBuiltinStyle.wdStyleCaption]);
-                range.Collapse(Word.WdCollapseDirection.wdCollapseStart);
+                range.Move(Word.WdUnits.wdParagraph, -1);
+                range.Move(Count: -1);
                 range.set_Style(doc.Styles["图表"]);
             }
 
