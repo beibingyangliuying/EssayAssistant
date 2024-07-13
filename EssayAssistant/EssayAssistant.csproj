@@ -208,6 +208,7 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="Extensions\TableExtension.cs" />
     <Compile Include="Forms\FormArrangeFigures.cs">
       <SubType>Form</SubType>
     </Compile>

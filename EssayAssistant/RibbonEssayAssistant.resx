@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buttonInitStyles.Label" xml:space="preserve">
+    <value>初始化样式</value>
+  </data>
+  <data name="&gt;&gt;buttonInitStyles.Name" xml:space="preserve">
+    <value>buttonInitStyles</value>
+  </data>
+  <data name="&gt;&gt;buttonInitStyles.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonInitStyles.Parent" xml:space="preserve">
+    <value>groupStyle</value>
+  </data>
+  <data name="&gt;&gt;buttonInitStyles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="buttonViewStyleTree.Label" xml:space="preserve">
     <value>查看样式树</value>
   </data>
@@ -130,7 +145,7 @@
     <value>groupStyle</value>
   </data>
   <data name="&gt;&gt;buttonViewStyleTree.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="groupStyle.Label" xml:space="preserve">
     <value>样式</value>
