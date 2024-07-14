@@ -15,7 +15,7 @@ namespace EssayAssistant.Forms
             labelInformation.Text = $"共计{_shapes.Count}张图片";
 
             var doc = Globals.ThisAddIn.Application.ActiveDocument;
-            doc.InitStyle();
+            doc.Init();
         }
 
         public FormArrangeFigures(List<Word.InlineShape> shapes, int start)
@@ -40,19 +40,25 @@ namespace EssayAssistant.Forms
             var styleCaption = doc.GetStyle(Word.WdBuiltinStyle.wdStyleCaption);
             var styleImage = doc.GetStyle("图表");
 
-            var enumerator = table.GetCellsEnumerator();
-            while (enumerator.MoveNext())
+            var cellEnumerator = table.GetCellsEnumerator();
+            var shapeEnumerator = _shapes.GetEnumerator();
+            var ifFirst = true;
+            while (shapeEnumerator.MoveNext() && cellEnumerator.MoveNext())
             {
-                var cell = enumerator.Current;
+                var cell = cellEnumerator.Current;
+                var shape = shapeEnumerator.Current;
+
                 cell.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalBottom;
                 cell.Range.InsertBefore("(");
                 cell.Range.InsertAfter(")");
 
                 var range = doc.Range(cell.Range.Start + 1, cell.Range.Start + 1);
+                var fieldText = ifFirst ? @"子图 \* alphabetic \r 1" : @"子图 \* alphabetic";
+                ifFirst = false;
                 var field = cell.Range.Fields.Add(
                     range,
                     Word.WdFieldType.wdFieldSequence,
-                    @"子图 \* alphabetic"
+                    fieldText
                 );
                 cell.Range.InsertParagraphBefore();
 
@@ -61,6 +67,9 @@ namespace EssayAssistant.Forms
                 range.Move(Word.WdUnits.wdParagraph, -1);
                 range.Move(Count: -1);
                 range.set_Style(styleImage);
+
+                shape.Range.Cut();
+                range.Paste();
             }
 
             DialogResult = DialogResult.OK;

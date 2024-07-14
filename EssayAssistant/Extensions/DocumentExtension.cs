@@ -32,8 +32,10 @@ namespace EssayAssistant.Extensions
         /// </summary>
         /// <param name="doc">Document object.</param>
         /// <returns>No return.</returns>
-        public static void InitStyle(this Word.Document doc)
+        public static void Init(this Word.Document doc)
         {
+            #region Initialize styles
+
             Word.Style style;
 
             style = doc.GetStyle("图表");
@@ -52,6 +54,10 @@ namespace EssayAssistant.Extensions
                 style.set_BaseStyle(doc.GetStyle(Word.WdBuiltinStyle.wdStyleNormal));
                 style.ParagraphFormat.FirstLineIndent = 20; // todo: the first line indent is not accurate
             }
+
+            #endregion
+
+            doc.Application.CaptionLabels.Add("子图");
         }
     }
 }
