@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 using EssayAssistant.Forms;
 using Microsoft.Office.Tools.Ribbon;
@@ -86,57 +85,6 @@ namespace EssayAssistant
                 Word.WdWordDialog.wdDialogInsertPicture
             ];
             dialog.Show();
-        }
-
-        private void ButtonInitStyles_Click(object sender, RibbonControlEventArgs e)
-        {
-            var doc = Globals.ThisAddIn.Application.ActiveDocument;
-            var styleNames = new List<string>();
-            Word.Style style;
-            try
-            {
-                style = doc.Styles["图表"];
-            }
-            catch (System.Runtime.InteropServices.COMException)
-            {
-                style = doc.Styles.Add("图表", Word.WdStyleType.wdStyleTypeParagraphOnly);
-                style.set_BaseStyle(doc.Styles[Word.WdBuiltinStyle.wdStyleNormal]);
-                style.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                style.ParagraphFormat.KeepWithNext = -1;
-                styleNames.Add(style.NameLocal);
-            }
-
-            try
-            {
-                style = doc.Styles["正文段落"];
-            }
-            catch (System.Runtime.InteropServices.COMException)
-            {
-                style = doc.Styles.Add("正文段落", Word.WdStyleType.wdStyleTypeParagraphOnly);
-                style.set_BaseStyle(doc.Styles[Word.WdBuiltinStyle.wdStyleNormal]);
-                style.ParagraphFormat.FirstLineIndent = 20;
-                styleNames.Add(style.NameLocal);
-            }
-
-            if (styleNames.Count > 0)
-            {
-                var builder = new StringBuilder();
-                foreach (var s in styleNames)
-                {
-                    builder.Append(s);
-                    builder.Append("，");
-                }
-                MessageBox.Show(
-                    $"已添加如下样式：{builder}",
-                    "信息",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-            }
-            else
-            {
-                MessageBox.Show("未添加样式！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
     }
 }

@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownColumn = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.labelInformation = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAccept = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumn)).BeginInit();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // numericUpDownColumn
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(73, 7);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericUpDownColumn.Location = new System.Drawing.Point(73, 7);
+            this.numericUpDownColumn.Maximum = new decimal(new int[] {
             4,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numericUpDownColumn.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(73, 20);
-            this.numericUpDown1.TabIndex = 0;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numericUpDownColumn.Name = "numericUpDownColumn";
+            this.numericUpDownColumn.Size = new System.Drawing.Size(73, 20);
+            this.numericUpDownColumn.TabIndex = 0;
+            this.numericUpDownColumn.Value = new decimal(new int[] {
             2,
             0,
             0,
@@ -115,13 +115,13 @@
             this.Controls.Add(this.buttonAccept);
             this.Controls.Add(this.labelInformation);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numericUpDownColumn);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormArrangeFigures";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "批量排列子图";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,10 +129,10 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericUpDownColumn;
         private System.Windows.Forms.Label labelInformation;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAccept;
+        private System.Windows.Forms.Label label1;
     }
 }

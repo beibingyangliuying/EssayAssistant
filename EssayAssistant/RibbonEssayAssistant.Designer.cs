@@ -37,7 +37,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RibbonEssayAssistant));
             this.tabEssayAssistant = this.Factory.CreateRibbonTab();
             this.groupStyle = this.Factory.CreateRibbonGroup();
-            this.buttonInitStyles = this.Factory.CreateRibbonButton();
             this.buttonViewStyleTree = this.Factory.CreateRibbonButton();
             this.groupImage = this.Factory.CreateRibbonGroup();
             this.buttonInsertFigures = this.Factory.CreateRibbonButton();
@@ -58,16 +57,9 @@
             // 
             // groupStyle
             // 
-            this.groupStyle.Items.Add(this.buttonInitStyles);
             this.groupStyle.Items.Add(this.buttonViewStyleTree);
             resources.ApplyResources(this.groupStyle, "groupStyle");
             this.groupStyle.Name = "groupStyle";
-            // 
-            // buttonInitStyles
-            // 
-            resources.ApplyResources(this.buttonInitStyles, "buttonInitStyles");
-            this.buttonInitStyles.Name = "buttonInitStyles";
-            this.buttonInitStyles.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonInitStyles_Click);
             // 
             // buttonViewStyleTree
             // 
@@ -87,18 +79,24 @@
             // 
             resources.ApplyResources(this.buttonInsertFigures, "buttonInsertFigures");
             this.buttonInsertFigures.Name = "buttonInsertFigures";
+            this.buttonInsertFigures.OfficeImageId = "PictureInsertFromFile";
+            this.buttonInsertFigures.ShowImage = true;
             this.buttonInsertFigures.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonInsertFigures_Click);
             // 
             // buttonArrangeFigures
             // 
             resources.ApplyResources(this.buttonArrangeFigures, "buttonArrangeFigures");
             this.buttonArrangeFigures.Name = "buttonArrangeFigures";
+            this.buttonArrangeFigures.OfficeImageId = "TableInsertDialog";
+            this.buttonArrangeFigures.ShowImage = true;
             this.buttonArrangeFigures.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonArrangeFigures_Click);
             // 
             // buttonSetFigureSizes
             // 
             resources.ApplyResources(this.buttonSetFigureSizes, "buttonSetFigureSizes");
             this.buttonSetFigureSizes.Name = "buttonSetFigureSizes";
+            this.buttonSetFigureSizes.OfficeImageId = "GroupPictureCompress";
+            this.buttonSetFigureSizes.ShowImage = true;
             this.buttonSetFigureSizes.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonSetFigureSizes_Click);
             // 
             // RibbonEssayAssistant
@@ -125,7 +123,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonArrangeFigures;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSetFigureSizes;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonInsertFigures;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonInitStyles;
     }
 
     partial class ThisRibbonCollection

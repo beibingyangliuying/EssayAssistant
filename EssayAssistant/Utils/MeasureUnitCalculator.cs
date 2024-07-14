@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
-using Units = Microsoft.Office.Interop.Word.WdMeasurementUnits;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace EssayAssistant.Utils
 {
@@ -20,64 +20,80 @@ namespace EssayAssistant.Utils
             }
         }
 
-        private static double LengthToPoints(double value, Units unit, double dpi)
+        private static double LengthToPoints(double value, Word.WdMeasurementUnits unit, double dpi)
         {
             switch (unit)
             {
-                case Units.wdCentimeters:
+                case Word.WdMeasurementUnits.wdCentimeters:
                     return value * dpi / 2.54;
 
-                case Units.wdMillimeters:
+                case Word.WdMeasurementUnits.wdMillimeters:
                     return value * dpi / 25.4;
 
-                case Units.wdInches:
+                case Word.WdMeasurementUnits.wdInches:
                     return value * dpi;
 
-                case Units.wdPoints:
+                case Word.WdMeasurementUnits.wdPoints:
                     return value;
 
-                case Units.wdPicas:
+                case Word.WdMeasurementUnits.wdPicas:
                     return value * dpi / 72;
 
                 default:
-                    throw new InvalidEnumArgumentException(nameof(unit), (int)unit, typeof(Units));
+                    throw new InvalidEnumArgumentException(
+                        nameof(unit),
+                        (int)unit,
+                        typeof(Word.WdMeasurementUnits)
+                    );
             }
         }
 
-        private static double PointsToLength(double value, Units unit, double dpi)
+        private static double PointsToLength(double value, Word.WdMeasurementUnits unit, double dpi)
         {
             switch (unit)
             {
-                case Units.wdCentimeters:
+                case Word.WdMeasurementUnits.wdCentimeters:
                     return value * 2.54 / dpi;
 
-                case Units.wdMillimeters:
+                case Word.WdMeasurementUnits.wdMillimeters:
                     return value * 25.4 / dpi;
 
-                case Units.wdInches:
+                case Word.WdMeasurementUnits.wdInches:
                     return value / dpi;
 
-                case Units.wdPoints:
+                case Word.WdMeasurementUnits.wdPoints:
                     return value;
 
-                case Units.wdPicas:
+                case Word.WdMeasurementUnits.wdPicas:
                     return value * 72 / dpi;
 
                 default:
-                    throw new InvalidEnumArgumentException(nameof(unit), (int)unit, typeof(Units));
+                    throw new InvalidEnumArgumentException(
+                        nameof(unit),
+                        (int)unit,
+                        typeof(Word.WdMeasurementUnits)
+                    );
             }
         }
 
-        public static double HeightToPoints(double value, Units unit = Units.wdCentimeters) =>
-            LengthToPoints(value, unit, dpiY);
+        public static double HeightToPoints(
+            double value,
+            Word.WdMeasurementUnits unit = Word.WdMeasurementUnits.wdCentimeters
+        ) => LengthToPoints(value, unit, dpiY);
 
-        public static double WidthToPoints(double value, Units unit = Units.wdCentimeters) =>
-            LengthToPoints(value, unit, dpiX);
+        public static double WidthToPoints(
+            double value,
+            Word.WdMeasurementUnits unit = Word.WdMeasurementUnits.wdCentimeters
+        ) => LengthToPoints(value, unit, dpiX);
 
-        public static double PointsToHeight(double value, Units unit = Units.wdCentimeters) =>
-            PointsToLength(value, unit, dpiY);
+        public static double PointsToHeight(
+            double value,
+            Word.WdMeasurementUnits unit = Word.WdMeasurementUnits.wdCentimeters
+        ) => PointsToLength(value, unit, dpiY);
 
-        public static double PointsToWidth(double value, Units unit = Units.wdCentimeters) =>
-            PointsToLength(value, unit, dpiX);
+        public static double PointsToWidth(
+            double value,
+            Word.WdMeasurementUnits unit = Word.WdMeasurementUnits.wdCentimeters
+        ) => PointsToLength(value, unit, dpiX);
     }
 }

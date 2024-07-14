@@ -13,6 +13,9 @@ namespace EssayAssistant.Forms
         private void PostInit()
         {
             labelInformation.Text = $"共计{_shapes.Count}张图片";
+
+            var doc = Globals.ThisAddIn.Application.ActiveDocument;
+            doc.InitStyle();
         }
 
         public FormArrangeFigures(List<Word.InlineShape> shapes, int start)
@@ -26,13 +29,16 @@ namespace EssayAssistant.Forms
 
         private void ButtonAccept_Click(object sender, System.EventArgs e)
         {
-            var columnCount = (int)numericUpDown1.Value;
+            var columnCount = (int)numericUpDownColumn.Value;
             var rowCount = _shapes.Count % columnCount == 0 ? 0 : 1;
             rowCount += _shapes.Count / columnCount;
 
             var doc = Globals.ThisAddIn.Application.ActiveDocument;
             var location = doc.Range(_start);
             var table = doc.Tables.Add(location, rowCount, columnCount);
+
+            var styleCaption = doc.GetStyle(Word.WdBuiltinStyle.wdStyleCaption);
+            var styleImage = doc.GetStyle("图表");
 
             var enumerator = table.GetCellsEnumerator();
             while (enumerator.MoveNext())
@@ -51,10 +57,10 @@ namespace EssayAssistant.Forms
                 cell.Range.InsertParagraphBefore();
 
                 range = field.Result;
-                range.set_Style(doc.Styles[Word.WdBuiltinStyle.wdStyleCaption]);
+                range.set_Style(styleCaption);
                 range.Move(Word.WdUnits.wdParagraph, -1);
                 range.Move(Count: -1);
-                range.set_Style(doc.Styles["图表"]);
+                range.set_Style(styleImage);
             }
 
             DialogResult = DialogResult.OK;
