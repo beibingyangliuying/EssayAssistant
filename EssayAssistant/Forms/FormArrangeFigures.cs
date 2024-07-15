@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using EssayAssistant.Extensions;
 using Word = Microsoft.Office.Interop.Word;
@@ -12,10 +13,10 @@ namespace EssayAssistant.Forms
 
         private void PostInit()
         {
-            labelInformation.Text = $"共计{_shapes.Count}张图片";
+            labelInformation.Text = $"共计{_shapes.Count}张图片。";
 
             var doc = Globals.ThisAddIn.Application.ActiveDocument;
-            doc.Init();
+            doc.Init(DocumentInitType.Style);
         }
 
         public FormArrangeFigures(List<Word.InlineShape> shapes, int start)
@@ -30,45 +31,34 @@ namespace EssayAssistant.Forms
         private void ButtonAccept_Click(object sender, System.EventArgs e)
         {
             var columnCount = (int)numericUpDownColumn.Value;
-            var rowCount = _shapes.Count % columnCount == 0 ? 0 : 1;
-            rowCount += _shapes.Count / columnCount;
+            var rowCount = (_shapes.Count % columnCount == 0 ? 0 : 1) + _shapes.Count / columnCount;
 
             var doc = Globals.ThisAddIn.Application.ActiveDocument;
-            var location = doc.Range(_start);
-            var table = doc.Tables.Add(location, rowCount, columnCount);
+            var table = doc.Tables.Add(doc.Range(_start), rowCount, columnCount);
 
             var styleCaption = doc.GetStyle(Word.WdBuiltinStyle.wdStyleCaption);
             var styleImage = doc.GetStyle("图表");
 
-            var cellEnumerator = table.GetCellsEnumerator();
-            var shapeEnumerator = _shapes.GetEnumerator();
             var ifFirst = true;
-            while (shapeEnumerator.MoveNext() && cellEnumerator.MoveNext())
+            foreach (var (c, s) in table.Cells().Zip(_shapes, (c, s) => (c, s)))
             {
-                var cell = cellEnumerator.Current;
-                var shape = shapeEnumerator.Current;
+                c.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalBottom;
+                c.Range.InsertBefore("(");
+                c.Range.InsertAfter(")");
 
-                cell.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalBottom;
-                cell.Range.InsertBefore("(");
-                cell.Range.InsertAfter(")");
-
-                var range = doc.Range(cell.Range.Start + 1, cell.Range.Start + 1);
+                var range = doc.Range(c.Range.Start + 1, c.Range.Start + 1); // One character inserted before.
                 var fieldText = ifFirst ? @"子图 \* alphabetic \r 1" : @"子图 \* alphabetic";
                 ifFirst = false;
-                var field = cell.Range.Fields.Add(
-                    range,
-                    Word.WdFieldType.wdFieldSequence,
-                    fieldText
-                );
-                cell.Range.InsertParagraphBefore();
+                var field = c.Range.Fields.Add(range, Word.WdFieldType.wdFieldSequence, fieldText);
+                c.Range.InsertParagraphBefore();
 
                 range = field.Result;
                 range.set_Style(styleCaption);
                 range.Move(Word.WdUnits.wdParagraph, -1);
-                range.Move(Count: -1);
+                range.Move(Count: -1); // Skip paragraph marker.
                 range.set_Style(styleImage);
 
-                shape.Range.Cut();
+                s.Range.Cut();
                 range.Paste();
             }
 

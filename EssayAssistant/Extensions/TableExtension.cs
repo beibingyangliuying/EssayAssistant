@@ -5,7 +5,7 @@ namespace EssayAssistant.Extensions
 {
     internal static class TableExtension
     {
-        public static IEnumerator<Word.Cell> GetCellsEnumerator(this Word.Table table)
+        public static IEnumerable<Word.Cell> Cells(this Word.Table table)
         {
             var first = table.Cell(1, 1);
             yield return first;

@@ -7,7 +7,9 @@ using System.Security;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("EssayAssistant")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription(
+    "VSTO for Word. Aiming at simplifying and normalizing word writing."
+)]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("EssayAssistant")]
@@ -35,4 +37,3 @@ using System.Security;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-

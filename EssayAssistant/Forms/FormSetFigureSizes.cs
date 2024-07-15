@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using EssayAssistant.Utils;
 using Office = Microsoft.Office.Core;
@@ -10,10 +11,11 @@ namespace EssayAssistant.Forms
     public partial class FormSetFigureSizes : Form
     {
         private readonly List<Word.InlineShape> _shapes;
+        private readonly Dictionary<RadioButton, NumericUpDown> _dict;
 
         private void PostInit()
         {
-            labelInformation.Text = $"共计{_shapes.Count}张图片";
+            labelInformation.Text = $"共计{_shapes.Count}张图片。";
         }
 
         public FormSetFigureSizes(List<Word.InlineShape> shapes)
@@ -21,6 +23,11 @@ namespace EssayAssistant.Forms
             InitializeComponent();
 
             _shapes = shapes;
+            _dict = new Dictionary<RadioButton, NumericUpDown>()
+            {
+                { radioButtonHeight, numericUpDownHeight },
+                { radioButtonWidth, numericUpDownWidth },
+            };
             PostInit();
         }
 
@@ -29,6 +36,7 @@ namespace EssayAssistant.Forms
             var lockAspectRatio = checkBoxLockAspectRatio.Checked
                 ? Office.MsoTriState.msoTrue
                 : Office.MsoTriState.msoFalse;
+
             foreach (var shape in _shapes)
                 shape.LockAspectRatio = lockAspectRatio;
 
@@ -52,20 +60,14 @@ namespace EssayAssistant.Forms
 
         private void RadioButton_Click(object sender, EventArgs e)
         {
-            var dict = new Dictionary<RadioButton, NumericUpDown>()
-            {
-                { radioButtonHeight, numericUpDownHeight },
-                { radioButtonWidth, numericUpDownWidth },
-            };
-            var selectedButton = sender as RadioButton;
+            var button = sender as RadioButton;
 
-            foreach (var button in dict.Keys)
+            foreach (var (b, n) in _dict.Keys.Zip(_dict.Values, (b, n) => (b, n)))
             {
-                var numericUpDown = dict[button];
-                if (button == selectedButton)
-                    numericUpDown.Enabled = true;
+                if (b == button)
+                    n.Enabled = true;
                 else
-                    numericUpDown.Enabled = false;
+                    n.Enabled = false;
             }
         }
     }

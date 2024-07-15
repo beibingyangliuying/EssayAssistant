@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EssayAssistant.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FormStartPosition" Type="System.Windows.Forms.FormStartPosition" Scope="Application">
+      <Value Profile="(Default)">CenterParent</Value>
+    </Setting>
+    <Setting Name="FormFont" Type="System.Drawing.Font" Scope="Application">
+      <Value Profile="(Default)">Microsoft Sans Serif, 8.25pt</Value>
+    </Setting>
+    <Setting Name="FormAutoScaleMode" Type="System.Windows.Forms.AutoScaleMode" Scope="Application">
+      <Value Profile="(Default)">Font</Value>
+    </Setting>
+    <Setting Name="OpenFileDialogFilterFigures" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">所有图片|*.emf;*.wmf;*.jpg;*.jpeg;*.jfif;*.jpe;*.png;*.bmp;*.dib;*.rle;*.gif;*.emz;*.wmz;*.tif;*.tiff|Windows增强型图元文件|*.emf|Windows图元文件|*.wmf|JPEG文件交换格式|*.jpg;*.jpeg;*.jfif;*.jpe|可移植网络图形|*.png|Windows位图|*.bmp;*.dib;*.rle|图形交换格式|*.gif|压缩式Windows增强型图元文件|*.emz|压缩式Windows图元文件|*.wmz|Tag图像文件格式|*.tif;*.tiff</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

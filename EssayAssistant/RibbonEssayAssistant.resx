@@ -150,6 +150,9 @@
   <data name="buttonInsertFigures.Label" xml:space="preserve">
     <value>批量插入图片</value>
   </data>
+  <data name="buttonInsertFigures.SuperTip" xml:space="preserve">
+    <value>批量插入本地电脑上的图片。</value>
+  </data>
   <data name="&gt;&gt;buttonInsertFigures.Name" xml:space="preserve">
     <value>buttonInsertFigures</value>
   </data>
@@ -157,7 +160,7 @@
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;buttonInsertFigures.Parent" xml:space="preserve">
-    <value>groupImage</value>
+    <value>groupFigure</value>
   </data>
   <data name="&gt;&gt;buttonInsertFigures.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -175,7 +178,7 @@
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;buttonArrangeFigures.Parent" xml:space="preserve">
-    <value>groupImage</value>
+    <value>groupFigure</value>
   </data>
   <data name="&gt;&gt;buttonArrangeFigures.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -193,24 +196,39 @@
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;buttonSetFigureSizes.Parent" xml:space="preserve">
-    <value>groupImage</value>
+    <value>groupFigure</value>
   </data>
   <data name="&gt;&gt;buttonSetFigureSizes.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="groupImage.Label" xml:space="preserve">
+  <data name="buttonReplaceFigures.Label" xml:space="preserve">
+    <value>批量替换图片</value>
+  </data>
+  <data name="&gt;&gt;buttonReplaceFigures.Name" xml:space="preserve">
+    <value>buttonReplaceFigures</value>
+  </data>
+  <data name="&gt;&gt;buttonReplaceFigures.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonReplaceFigures.Parent" xml:space="preserve">
+    <value>groupFigure</value>
+  </data>
+  <data name="&gt;&gt;buttonReplaceFigures.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupFigure.Label" xml:space="preserve">
     <value>图片</value>
   </data>
-  <data name="&gt;&gt;groupImage.Name" xml:space="preserve">
-    <value>groupImage</value>
+  <data name="&gt;&gt;groupFigure.Name" xml:space="preserve">
+    <value>groupFigure</value>
   </data>
-  <data name="&gt;&gt;groupImage.Type" xml:space="preserve">
+  <data name="&gt;&gt;groupFigure.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;groupImage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;groupFigure.Parent" xml:space="preserve">
     <value>tabEssayAssistant</value>
   </data>
-  <data name="&gt;&gt;groupImage.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;groupFigure.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tabEssayAssistant.Label" xml:space="preserve">

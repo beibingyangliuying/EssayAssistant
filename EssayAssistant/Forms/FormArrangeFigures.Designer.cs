@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.numericUpDownColumn = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelColumn = new System.Windows.Forms.Label();
             this.labelInformation = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAccept = new System.Windows.Forms.Button();
@@ -58,15 +58,15 @@
             0,
             0});
             // 
-            // label1
+            // labelColumn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "子图列数";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelColumn.AutoSize = true;
+            this.labelColumn.Location = new System.Drawing.Point(12, 9);
+            this.labelColumn.Name = "labelColumn";
+            this.labelColumn.Size = new System.Drawing.Size(55, 13);
+            this.labelColumn.TabIndex = 1;
+            this.labelColumn.Text = "子图列数";
+            this.labelColumn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelInformation
             // 
@@ -75,9 +75,8 @@
             this.labelInformation.Location = new System.Drawing.Point(12, 39);
             this.labelInformation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelInformation.Name = "labelInformation";
-            this.labelInformation.Size = new System.Drawing.Size(19, 13);
+            this.labelInformation.Size = new System.Drawing.Size(0, 13);
             this.labelInformation.TabIndex = 9;
-            this.labelInformation.Text = "无";
             this.labelInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonCancel
@@ -108,18 +107,19 @@
             // 
             this.AcceptButton = this.buttonAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = global::EssayAssistant.Properties.Settings.Default.FormAutoScaleMode;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(163, 98);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAccept);
             this.Controls.Add(this.labelInformation);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelColumn);
             this.Controls.Add(this.numericUpDownColumn);
+            this.Font = global::EssayAssistant.Properties.Settings.Default.FormFont;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormArrangeFigures";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = global::EssayAssistant.Properties.Settings.Default.FormStartPosition;
             this.Text = "批量排列子图";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumn)).EndInit();
             this.ResumeLayout(false);
@@ -133,6 +133,6 @@
         private System.Windows.Forms.Label labelInformation;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAccept;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelColumn;
     }
 }

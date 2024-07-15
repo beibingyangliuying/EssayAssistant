@@ -1,63 +1,69 @@
-﻿using Word = Microsoft.Office.Interop.Word;
+﻿using System;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace EssayAssistant.Extensions
 {
+    [Flags]
+    internal enum DocumentInitType
+    {
+        Style = 1,
+        CaptionLabel = 1 << 1,
+    }
+
     internal static class DocumentExtension
     {
-        /// <summary>
-        /// Get the style by index.
-        /// </summary>
-        /// <seealso cref="Word.WdBuiltinStyle"/>
-        /// <param name="doc">Document object.</param>
-        /// <param name="index">An Object indicating the ordinal position or a string representing the name of the individual object.</param>
-        /// <returns>A style object if exists, otherwise null.</returns>
-        public static Word.Style GetStyle(this Word.Document doc, object index)
+        private static Word.Style GetStyle(this Word.Document doc, object index)
         {
-            if (index is string || index.GetType().IsEnum)
+            try
             {
-                try
-                {
-                    return doc.Styles[index];
-                }
-                catch (System.Runtime.InteropServices.COMException)
-                {
-                    return null;
-                }
+                return doc.Styles[index];
             }
-            return null;
+            catch (System.Runtime.InteropServices.COMException)
+            {
+                return null;
+            }
         }
 
-        /// <summary>
-        /// Initialize styles needed in the document.
-        /// </summary>
-        /// <param name="doc">Document object.</param>
-        /// <returns>No return.</returns>
-        public static void Init(this Word.Document doc)
+        public static Word.Style GetStyle(this Word.Document doc, string index) =>
+            doc.GetStyle(index as object);
+
+        public static Word.Style GetStyle(this Word.Document doc, Word.WdBuiltinStyle index) =>
+            doc.GetStyle(index as object);
+
+        public static void Init(this Word.Document doc, DocumentInitType type)
         {
-            #region Initialize styles
-
-            Word.Style style;
-
-            style = doc.GetStyle("图表");
-            if (style is null)
+            if (type.HasFlag(DocumentInitType.Style))
             {
-                style = doc.Styles.Add("图表", Word.WdStyleType.wdStyleTypeParagraphOnly);
-                style.set_BaseStyle(doc.GetStyle(Word.WdBuiltinStyle.wdStyleNormal));
-                style.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                style.ParagraphFormat.KeepWithNext = -1;
+                Word.Style paragraphStyle;
+                paragraphStyle = doc.GetStyle("图表");
+                if (paragraphStyle is null)
+                {
+                    paragraphStyle = doc.Styles.Add(
+                        "图表",
+                        Word.WdStyleType.wdStyleTypeParagraphOnly
+                    );
+                    paragraphStyle.set_BaseStyle(doc.GetStyle(Word.WdBuiltinStyle.wdStyleNormal));
+                    paragraphStyle.ParagraphFormat.Alignment =
+                        Word.WdParagraphAlignment.wdAlignParagraphCenter;
+                    paragraphStyle.ParagraphFormat.KeepWithNext = -1;
+                }
+
+                paragraphStyle = doc.GetStyle("正文段落");
+                if (paragraphStyle is null)
+                {
+                    paragraphStyle = doc.Styles.Add(
+                        "正文段落",
+                        Word.WdStyleType.wdStyleTypeParagraphOnly
+                    );
+                    paragraphStyle.set_BaseStyle(doc.GetStyle(Word.WdBuiltinStyle.wdStyleNormal));
+                    paragraphStyle.ParagraphFormat.FirstLineIndent = 20; // todo: the first line indent is not accurate
+                }
             }
 
-            style = doc.GetStyle("正文段落");
-            if (style is null)
+            if (type.HasFlag(DocumentInitType.CaptionLabel))
             {
-                style = doc.Styles.Add("正文段落", Word.WdStyleType.wdStyleTypeParagraphOnly);
-                style.set_BaseStyle(doc.GetStyle(Word.WdBuiltinStyle.wdStyleNormal));
-                style.ParagraphFormat.FirstLineIndent = 20; // todo: the first line indent is not accurate
+                doc.Application.CaptionLabels.Add("子图");
             }
-
-            #endregion
-
-            doc.Application.CaptionLabels.Add("子图");
         }
     }
 }

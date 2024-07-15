@@ -132,7 +132,7 @@
             // 
             this.buttonAccept.AutoSize = true;
             this.buttonAccept.Location = new System.Drawing.Point(119, 94);
-            this.buttonAccept.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAccept.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAccept.Name = "buttonAccept";
             this.buttonAccept.Size = new System.Drawing.Size(56, 23);
             this.buttonAccept.TabIndex = 6;
@@ -145,7 +145,7 @@
             this.buttonCancel.AutoSize = true;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(180, 94);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(56, 23);
             this.buttonCancel.TabIndex = 7;
@@ -159,9 +159,9 @@
             this.labelInformation.Location = new System.Drawing.Point(12, 99);
             this.labelInformation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelInformation.Name = "labelInformation";
-            this.labelInformation.Size = new System.Drawing.Size(19, 13);
+            this.labelInformation.Size = new System.Drawing.Size(7, 13);
             this.labelInformation.TabIndex = 8;
-            this.labelInformation.Text = "无";
+            this.labelInformation.Text = "\r\n";
             this.labelInformation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel1
@@ -187,18 +187,19 @@
             // 
             this.AcceptButton = this.buttonAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = global::EssayAssistant.Properties.Settings.Default.FormAutoScaleMode;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(246, 126);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.labelInformation);
             this.Controls.Add(this.buttonAccept);
+            this.Font = global::EssayAssistant.Properties.Settings.Default.FormFont;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSetFigureSizes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "批量设置图片大小";
+            this.StartPosition = global::EssayAssistant.Properties.Settings.Default.FormStartPosition;
+            this.Text = "批量设置图片尺寸";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

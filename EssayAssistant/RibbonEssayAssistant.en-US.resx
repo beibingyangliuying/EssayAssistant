@@ -117,13 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button1.Label" xml:space="preserve">
-    <value>View Style Tree</value>
-  </data>
   <data name="groupStyle.Label" xml:space="preserve">
     <value>Style</value>
   </data>
-  <data name="tab1.Label" xml:space="preserve">
+  <data name="groupFigure.Label" xml:space="preserve">
+    <value>Figure</value>
+  </data>
+  <data name="tabEssayAssistant.Label" xml:space="preserve">
     <value>EssayAssistant</value>
+  </data>
+  <data name="buttonViewStyleTree.Label" xml:space="preserve">
+    <value>View Style Tree</value>
   </data>
 </root>

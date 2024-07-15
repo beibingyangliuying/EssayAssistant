@@ -124,6 +124,9 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="Prism, Version=8.1.97.5141, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.8.1.97\lib\net47\Prism.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -209,12 +212,19 @@
   -->
   <ItemGroup>
     <Compile Include="Extensions\DocumentExtension.cs" />
+    <Compile Include="Extensions\InlineShapeExtension.cs" />
     <Compile Include="Extensions\TableExtension.cs" />
     <Compile Include="Forms\FormArrangeFigures.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormArrangeFigures.Designer.cs">
       <DependentUpon>FormArrangeFigures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReplaceFigures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReplaceFigures.Designer.cs">
+      <DependentUpon>FormReplaceFigures.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormSetFigureSizes.cs">
       <SubType>Form</SubType>
@@ -228,6 +238,9 @@
     <Compile Include="Utils\MeasureUnitCalculator.cs" />
     <EmbeddedResource Include="Forms\FormArrangeFigures.resx">
       <DependentUpon>FormArrangeFigures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormReplaceFigures.resx">
+      <DependentUpon>FormReplaceFigures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSetFigureSizes.resx">
       <DependentUpon>FormSetFigureSizes.cs</DependentUpon>
@@ -247,6 +260,8 @@
     <EmbeddedResource Include="RibbonEssayAssistant.resx">
       <DependentUpon>RibbonEssayAssistant.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -254,6 +269,7 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="RibbonEssayAssistant.cs">
       <SubType>Component</SubType>
