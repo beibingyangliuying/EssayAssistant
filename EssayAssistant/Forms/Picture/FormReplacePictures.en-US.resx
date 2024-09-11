@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,40 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="groupStyle.Label" xml:space="preserve">
-    <value>Style</value>
-  </data>
-  <data name="groupFigure.Label" xml:space="preserve">
-    <value>Picture</value>
-  </data>
-  <data name="tabEssayAssistant.Label" xml:space="preserve">
-    <value>EssayAssistant</value>
-  </data>
-  <data name="buttonViewStyleTree.Label" xml:space="preserve">
-    <value>View Style Tress</value>
-  </data>
-  <data name="buttonReplaceFigures.Label" xml:space="preserve">
-    <value>Batch Replace Pictures</value>
-  </data>
-  <data name="buttonSetFigureSizes.SuperTip" xml:space="preserve">
-    <value>Uniformly set the width or height of the selected embedded pictures.</value>
-  </data>
-  <data name="buttonSetFigureSizes.Label" xml:space="preserve">
-    <value>Batch set pictures' sizes</value>
-  </data>
-  <data name="buttonArrangeFigures.Label" xml:space="preserve">
-    <value>Batch arrange sub-pictures</value>
-  </data>
-  <data name="buttonInsertFigures.SuperTip" xml:space="preserve">
-    <value>Batch insert pictures from the local host.</value>
-  </data>
-  <data name="buttonInsertFigures.Label" xml:space="preserve">
-    <value>Batch Insert Pictures</value>
-  </data>
-  <data name="buttonArrangeFigures.SuperTip" xml:space="preserve">
-    <value>Insert a borderless table and move the selected embedded pictures into the table cells in order.</value>
-  </data>
-  <data name="groupCharacter.Label" xml:space="preserve">
-    <value>Character</value>
-  </data>
 </root>

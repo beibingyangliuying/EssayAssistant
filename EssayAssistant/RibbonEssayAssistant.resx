@@ -147,73 +147,148 @@
   <data name="&gt;&gt;groupStyle.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="buttonInsertFigures.Label" xml:space="preserve">
-    <value>批量插入图片</value>
+  <data name="buttonSelectCJHChar.Label" xml:space="preserve">
+    <value>选择中文字符</value>
   </data>
-  <data name="buttonInsertFigures.SuperTip" xml:space="preserve">
-    <value>批量插入本地电脑上的图片。</value>
+  <data name="&gt;&gt;buttonSelectCJHChar.Name" xml:space="preserve">
+    <value>buttonSelectCJHChar</value>
   </data>
-  <data name="&gt;&gt;buttonInsertFigures.Name" xml:space="preserve">
-    <value>buttonInsertFigures</value>
-  </data>
-  <data name="&gt;&gt;buttonInsertFigures.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonSelectCJHChar.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;buttonInsertFigures.Parent" xml:space="preserve">
-    <value>groupFigure</value>
+  <data name="&gt;&gt;buttonSelectCJHChar.Parent" xml:space="preserve">
+    <value>groupCharacter</value>
   </data>
-  <data name="&gt;&gt;buttonInsertFigures.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonSelectCJHChar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="buttonArrangeFigures.Label" xml:space="preserve">
-    <value>批量排列子图</value>
+  <data name="buttonCorrectCharacterFormat.Label" xml:space="preserve">
+    <value>修正字符格式</value>
   </data>
-  <data name="buttonArrangeFigures.SuperTip" xml:space="preserve">
-    <value>插入一个无边框表格，并将选中的嵌入式图片按顺序移动到表格的单元格中。</value>
+  <data name="&gt;&gt;buttonCorrectCharacterFormat.Name" xml:space="preserve">
+    <value>buttonCorrectCharacterFormat</value>
   </data>
-  <data name="&gt;&gt;buttonArrangeFigures.Name" xml:space="preserve">
-    <value>buttonArrangeFigures</value>
-  </data>
-  <data name="&gt;&gt;buttonArrangeFigures.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonCorrectCharacterFormat.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;buttonArrangeFigures.Parent" xml:space="preserve">
-    <value>groupFigure</value>
+  <data name="&gt;&gt;buttonCorrectCharacterFormat.Parent" xml:space="preserve">
+    <value>groupCharacter</value>
   </data>
-  <data name="&gt;&gt;buttonArrangeFigures.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonCorrectCharacterFormat.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="buttonSetFigureSizes.Label" xml:space="preserve">
-    <value>批量设置图片尺寸</value>
+  <data name="buttonCorrectPunctuation.Label" xml:space="preserve">
+    <value>修正中英文标点</value>
   </data>
-  <data name="buttonSetFigureSizes.SuperTip" xml:space="preserve">
-    <value>统一设置选中的嵌入式图片的宽度或高度。</value>
+  <data name="&gt;&gt;buttonCorrectPunctuation.Name" xml:space="preserve">
+    <value>buttonCorrectPunctuation</value>
   </data>
-  <data name="&gt;&gt;buttonSetFigureSizes.Name" xml:space="preserve">
-    <value>buttonSetFigureSizes</value>
-  </data>
-  <data name="&gt;&gt;buttonSetFigureSizes.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonCorrectPunctuation.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;buttonSetFigureSizes.Parent" xml:space="preserve">
-    <value>groupFigure</value>
+  <data name="&gt;&gt;buttonCorrectPunctuation.Parent" xml:space="preserve">
+    <value>groupCharacter</value>
   </data>
-  <data name="&gt;&gt;buttonSetFigureSizes.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonCorrectPunctuation.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="buttonReplaceFigures.Label" xml:space="preserve">
-    <value>批量替换图片</value>
+  <data name="buttonCorrectWordSpacing.Label" xml:space="preserve">
+    <value>清除多余空格</value>
   </data>
-  <data name="&gt;&gt;buttonReplaceFigures.Name" xml:space="preserve">
-    <value>buttonReplaceFigures</value>
+  <data name="&gt;&gt;buttonCorrectWordSpacing.Name" xml:space="preserve">
+    <value>buttonCorrectWordSpacing</value>
   </data>
-  <data name="&gt;&gt;buttonReplaceFigures.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonCorrectWordSpacing.Type" xml:space="preserve">
     <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="&gt;&gt;buttonReplaceFigures.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonCorrectWordSpacing.Parent" xml:space="preserve">
+    <value>groupCharacter</value>
+  </data>
+  <data name="&gt;&gt;buttonCorrectWordSpacing.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupCharacter.Label" xml:space="preserve">
+    <value>字符</value>
+  </data>
+  <data name="&gt;&gt;groupCharacter.Name" xml:space="preserve">
+    <value>groupCharacter</value>
+  </data>
+  <data name="&gt;&gt;groupCharacter.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupCharacter.Parent" xml:space="preserve">
+    <value>tabEssayAssistant</value>
+  </data>
+  <data name="&gt;&gt;groupCharacter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonInsertPictures.Label" xml:space="preserve">
+    <value>批量插入图片</value>
+  </data>
+  <data name="buttonInsertPictures.SuperTip" xml:space="preserve">
+    <value>批量插入本地电脑上的图片。</value>
+  </data>
+  <data name="&gt;&gt;buttonInsertPictures.Name" xml:space="preserve">
+    <value>buttonInsertPictures</value>
+  </data>
+  <data name="&gt;&gt;buttonInsertPictures.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonInsertPictures.Parent" xml:space="preserve">
     <value>groupFigure</value>
   </data>
-  <data name="&gt;&gt;buttonReplaceFigures.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonInsertPictures.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonArrangePictures.Label" xml:space="preserve">
+    <value>批量排列子图</value>
+  </data>
+  <data name="buttonArrangePictures.SuperTip" xml:space="preserve">
+    <value>插入一个无边框表格，并将选中的嵌入式图片按顺序移动到表格的单元格中。</value>
+  </data>
+  <data name="&gt;&gt;buttonArrangePictures.Name" xml:space="preserve">
+    <value>buttonArrangePictures</value>
+  </data>
+  <data name="&gt;&gt;buttonArrangePictures.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonArrangePictures.Parent" xml:space="preserve">
+    <value>groupFigure</value>
+  </data>
+  <data name="&gt;&gt;buttonArrangePictures.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonSetPicturesSizes.Label" xml:space="preserve">
+    <value>批量设置图片尺寸</value>
+  </data>
+  <data name="buttonSetPicturesSizes.SuperTip" xml:space="preserve">
+    <value>统一设置选中的嵌入式图片的宽度或高度。</value>
+  </data>
+  <data name="&gt;&gt;buttonSetPicturesSizes.Name" xml:space="preserve">
+    <value>buttonSetPicturesSizes</value>
+  </data>
+  <data name="&gt;&gt;buttonSetPicturesSizes.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonSetPicturesSizes.Parent" xml:space="preserve">
+    <value>groupFigure</value>
+  </data>
+  <data name="&gt;&gt;buttonSetPicturesSizes.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonReplacePictures.Label" xml:space="preserve">
+    <value>批量替换图片</value>
+  </data>
+  <data name="&gt;&gt;buttonReplacePictures.Name" xml:space="preserve">
+    <value>buttonReplacePictures</value>
+  </data>
+  <data name="&gt;&gt;buttonReplacePictures.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonReplacePictures.Parent" xml:space="preserve">
+    <value>groupFigure</value>
+  </data>
+  <data name="&gt;&gt;buttonReplacePictures.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="groupFigure.Label" xml:space="preserve">
@@ -229,7 +304,7 @@
     <value>tabEssayAssistant</value>
   </data>
   <data name="&gt;&gt;groupFigure.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="tabEssayAssistant.Label" xml:space="preserve">
     <value>论文助手</value>

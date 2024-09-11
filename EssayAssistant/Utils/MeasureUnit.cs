@@ -5,12 +5,12 @@ using Word = Microsoft.Office.Interop.Word;
 
 namespace EssayAssistant.Utils
 {
-    internal static class MeasureUnitCalculator
+    internal static class MeasureUnit
     {
         private static readonly double dpiX;
         private static readonly double dpiY;
 
-        static MeasureUnitCalculator()
+        static MeasureUnit()
         {
             var ratio = 4.0 / 3.0; // Magic Number
             using (var g = Graphics.FromHwnd(IntPtr.Zero))
@@ -26,19 +26,14 @@ namespace EssayAssistant.Utils
             {
                 case Word.WdMeasurementUnits.wdCentimeters:
                     return value * dpi / 2.54;
-
                 case Word.WdMeasurementUnits.wdMillimeters:
                     return value * dpi / 25.4;
-
                 case Word.WdMeasurementUnits.wdInches:
                     return value * dpi;
-
                 case Word.WdMeasurementUnits.wdPoints:
                     return value;
-
                 case Word.WdMeasurementUnits.wdPicas:
                     return value * dpi / 72;
-
                 default:
                     throw new InvalidEnumArgumentException(
                         nameof(unit),
@@ -54,19 +49,14 @@ namespace EssayAssistant.Utils
             {
                 case Word.WdMeasurementUnits.wdCentimeters:
                     return value * 2.54 / dpi;
-
                 case Word.WdMeasurementUnits.wdMillimeters:
                     return value * 25.4 / dpi;
-
                 case Word.WdMeasurementUnits.wdInches:
                     return value / dpi;
-
                 case Word.WdMeasurementUnits.wdPoints:
                     return value;
-
                 case Word.WdMeasurementUnits.wdPicas:
                     return value * 72 / dpi;
-
                 default:
                     throw new InvalidEnumArgumentException(
                         nameof(unit),

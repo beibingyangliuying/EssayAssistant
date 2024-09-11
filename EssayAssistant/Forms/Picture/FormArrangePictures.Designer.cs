@@ -1,6 +1,6 @@
-﻿namespace EssayAssistant.Forms
+﻿namespace EssayAssistant.Forms.Picture
 {
-    partial class FormArrangeFigures
+    partial class FormArrangePictures
     {
         /// <summary>
         /// Required designer variable.

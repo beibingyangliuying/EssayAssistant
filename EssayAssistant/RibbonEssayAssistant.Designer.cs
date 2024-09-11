@@ -38,13 +38,19 @@
             this.tabEssayAssistant = this.Factory.CreateRibbonTab();
             this.groupStyle = this.Factory.CreateRibbonGroup();
             this.buttonViewStyleTree = this.Factory.CreateRibbonButton();
+            this.groupCharacter = this.Factory.CreateRibbonGroup();
+            this.buttonCorrectCharacterFormat = this.Factory.CreateRibbonButton();
+            this.buttonCorrectPunctuation = this.Factory.CreateRibbonButton();
+            this.buttonCorrectWordSpacing = this.Factory.CreateRibbonButton();
             this.groupFigure = this.Factory.CreateRibbonGroup();
-            this.buttonInsertFigures = this.Factory.CreateRibbonButton();
-            this.buttonArrangeFigures = this.Factory.CreateRibbonButton();
-            this.buttonSetFigureSizes = this.Factory.CreateRibbonButton();
-            this.buttonReplaceFigures = this.Factory.CreateRibbonButton();
+            this.buttonInsertPictures = this.Factory.CreateRibbonButton();
+            this.buttonArrangePictures = this.Factory.CreateRibbonButton();
+            this.buttonSetPicturesSizes = this.Factory.CreateRibbonButton();
+            this.buttonReplacePictures = this.Factory.CreateRibbonButton();
+            this.buttonSelectCJHChar = this.Factory.CreateRibbonButton();
             this.tabEssayAssistant.SuspendLayout();
             this.groupStyle.SuspendLayout();
+            this.groupCharacter.SuspendLayout();
             this.groupFigure.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +58,7 @@
             // 
             this.tabEssayAssistant.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tabEssayAssistant.Groups.Add(this.groupStyle);
+            this.tabEssayAssistant.Groups.Add(this.groupCharacter);
             this.tabEssayAssistant.Groups.Add(this.groupFigure);
             resources.ApplyResources(this.tabEssayAssistant, "tabEssayAssistant");
             this.tabEssayAssistant.Name = "tabEssayAssistant";
@@ -68,46 +75,79 @@
             this.buttonViewStyleTree.Name = "buttonViewStyleTree";
             this.buttonViewStyleTree.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonViewStyleTree_Click);
             // 
+            // groupCharacter
+            // 
+            this.groupCharacter.Items.Add(this.buttonSelectCJHChar);
+            this.groupCharacter.Items.Add(this.buttonCorrectCharacterFormat);
+            this.groupCharacter.Items.Add(this.buttonCorrectPunctuation);
+            this.groupCharacter.Items.Add(this.buttonCorrectWordSpacing);
+            resources.ApplyResources(this.groupCharacter, "groupCharacter");
+            this.groupCharacter.Name = "groupCharacter";
+            // 
+            // buttonCorrectCharacterFormat
+            // 
+            resources.ApplyResources(this.buttonCorrectCharacterFormat, "buttonCorrectCharacterFormat");
+            this.buttonCorrectCharacterFormat.Name = "buttonCorrectCharacterFormat";
+            this.buttonCorrectCharacterFormat.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonCorrectCharacterFormat_Click);
+            // 
+            // buttonCorrectPunctuation
+            // 
+            resources.ApplyResources(this.buttonCorrectPunctuation, "buttonCorrectPunctuation");
+            this.buttonCorrectPunctuation.Name = "buttonCorrectPunctuation";
+            this.buttonCorrectPunctuation.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonCorrectPunctuation_Click);
+            // 
+            // buttonCorrectWordSpacing
+            // 
+            resources.ApplyResources(this.buttonCorrectWordSpacing, "buttonCorrectWordSpacing");
+            this.buttonCorrectWordSpacing.Name = "buttonCorrectWordSpacing";
+            this.buttonCorrectWordSpacing.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonCorrectWordSpacing_Click);
+            // 
             // groupFigure
             // 
-            this.groupFigure.Items.Add(this.buttonInsertFigures);
-            this.groupFigure.Items.Add(this.buttonArrangeFigures);
-            this.groupFigure.Items.Add(this.buttonSetFigureSizes);
-            this.groupFigure.Items.Add(this.buttonReplaceFigures);
+            this.groupFigure.Items.Add(this.buttonInsertPictures);
+            this.groupFigure.Items.Add(this.buttonArrangePictures);
+            this.groupFigure.Items.Add(this.buttonSetPicturesSizes);
+            this.groupFigure.Items.Add(this.buttonReplacePictures);
             resources.ApplyResources(this.groupFigure, "groupFigure");
             this.groupFigure.Name = "groupFigure";
             // 
-            // buttonInsertFigures
+            // buttonInsertPictures
             // 
-            resources.ApplyResources(this.buttonInsertFigures, "buttonInsertFigures");
-            this.buttonInsertFigures.Name = "buttonInsertFigures";
-            this.buttonInsertFigures.OfficeImageId = "PictureInsertFromFile";
-            this.buttonInsertFigures.ShowImage = true;
-            this.buttonInsertFigures.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonInsertFigures_Click);
+            resources.ApplyResources(this.buttonInsertPictures, "buttonInsertPictures");
+            this.buttonInsertPictures.Name = "buttonInsertPictures";
+            this.buttonInsertPictures.OfficeImageId = "PictureInsertFromFile";
+            this.buttonInsertPictures.ShowImage = true;
+            this.buttonInsertPictures.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonInsertPictures_Click);
             // 
-            // buttonArrangeFigures
+            // buttonArrangePictures
             // 
-            resources.ApplyResources(this.buttonArrangeFigures, "buttonArrangeFigures");
-            this.buttonArrangeFigures.Name = "buttonArrangeFigures";
-            this.buttonArrangeFigures.OfficeImageId = "TableInsertDialog";
-            this.buttonArrangeFigures.ShowImage = true;
-            this.buttonArrangeFigures.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonArrangeFigures_Click);
+            resources.ApplyResources(this.buttonArrangePictures, "buttonArrangePictures");
+            this.buttonArrangePictures.Name = "buttonArrangePictures";
+            this.buttonArrangePictures.OfficeImageId = "TableInsertDialog";
+            this.buttonArrangePictures.ShowImage = true;
+            this.buttonArrangePictures.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonArrangePictures_Click);
             // 
-            // buttonSetFigureSizes
+            // buttonSetPicturesSizes
             // 
-            resources.ApplyResources(this.buttonSetFigureSizes, "buttonSetFigureSizes");
-            this.buttonSetFigureSizes.Name = "buttonSetFigureSizes";
-            this.buttonSetFigureSizes.OfficeImageId = "GroupPictureCompress";
-            this.buttonSetFigureSizes.ShowImage = true;
-            this.buttonSetFigureSizes.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonSetFigureSizes_Click);
+            resources.ApplyResources(this.buttonSetPicturesSizes, "buttonSetPicturesSizes");
+            this.buttonSetPicturesSizes.Name = "buttonSetPicturesSizes";
+            this.buttonSetPicturesSizes.OfficeImageId = "GroupPictureCompress";
+            this.buttonSetPicturesSizes.ShowImage = true;
+            this.buttonSetPicturesSizes.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonSetPicturesSizes_Click);
             // 
-            // buttonReplaceFigures
+            // buttonReplacePictures
             // 
-            resources.ApplyResources(this.buttonReplaceFigures, "buttonReplaceFigures");
-            this.buttonReplaceFigures.Name = "buttonReplaceFigures";
-            this.buttonReplaceFigures.OfficeImageId = "PictureChange";
-            this.buttonReplaceFigures.ShowImage = true;
-            this.buttonReplaceFigures.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonReplaceFigures_Click);
+            resources.ApplyResources(this.buttonReplacePictures, "buttonReplacePictures");
+            this.buttonReplacePictures.Name = "buttonReplacePictures";
+            this.buttonReplacePictures.OfficeImageId = "PictureChange";
+            this.buttonReplacePictures.ShowImage = true;
+            this.buttonReplacePictures.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonReplacePictures_Click);
+            // 
+            // buttonSelectCJHChar
+            // 
+            resources.ApplyResources(this.buttonSelectCJHChar, "buttonSelectCJHChar");
+            this.buttonSelectCJHChar.Name = "buttonSelectCJHChar";
+            this.buttonSelectCJHChar.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonSelectCJHChar_Click);
             // 
             // RibbonEssayAssistant
             // 
@@ -118,6 +158,8 @@
             this.tabEssayAssistant.PerformLayout();
             this.groupStyle.ResumeLayout(false);
             this.groupStyle.PerformLayout();
+            this.groupCharacter.ResumeLayout(false);
+            this.groupCharacter.PerformLayout();
             this.groupFigure.ResumeLayout(false);
             this.groupFigure.PerformLayout();
             this.ResumeLayout(false);
@@ -130,10 +172,15 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupStyle;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonViewStyleTree;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupFigure;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonArrangeFigures;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSetFigureSizes;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonInsertFigures;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReplaceFigures;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonArrangePictures;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSetPicturesSizes;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonInsertPictures;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonReplacePictures;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupCharacter;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCorrectCharacterFormat;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCorrectPunctuation;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonCorrectWordSpacing;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonSelectCJHChar;
     }
 
     partial class ThisRibbonCollection

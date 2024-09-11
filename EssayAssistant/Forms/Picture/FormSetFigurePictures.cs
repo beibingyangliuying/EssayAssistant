@@ -6,9 +6,9 @@ using EssayAssistant.Utils;
 using Office = Microsoft.Office.Core;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace EssayAssistant.Forms
+namespace EssayAssistant.Forms.Picture
 {
-    public partial class FormSetFigureSizes : Form
+    public partial class FormSetFigurePictures : Form
     {
         private readonly List<Word.InlineShape> _shapes;
         private readonly Dictionary<RadioButton, NumericUpDown> _dict;
@@ -18,7 +18,7 @@ namespace EssayAssistant.Forms
             labelInformation.Text = $"共计{_shapes.Count}张图片。";
         }
 
-        public FormSetFigureSizes(List<Word.InlineShape> shapes)
+        public FormSetFigurePictures(List<Word.InlineShape> shapes)
         {
             InitializeComponent();
 
@@ -42,15 +42,13 @@ namespace EssayAssistant.Forms
 
             if (radioButtonHeight.Checked)
             {
-                var value = (float)
-                    MeasureUnitCalculator.HeightToPoints((double)numericUpDownHeight.Value);
+                var value = (float)MeasureUnit.HeightToPoints((double)numericUpDownHeight.Value);
                 foreach (var shape in _shapes)
                     shape.Height = value;
             }
             else if (radioButtonWidth.Checked)
             {
-                var value = (float)
-                    MeasureUnitCalculator.WidthToPoints((double)numericUpDownWidth.Value);
+                var value = (float)MeasureUnit.WidthToPoints((double)numericUpDownWidth.Value);
                 foreach (var shape in _shapes)
                     shape.Width = value;
             }

@@ -34,29 +34,26 @@ namespace EssayAssistant.Extensions
         {
             if (type.HasFlag(DocumentInitType.Style))
             {
-                Word.Style paragraphStyle;
-                paragraphStyle = doc.GetStyle("图表");
-                if (paragraphStyle is null)
+                var styleNormal = doc.GetStyle(Word.WdBuiltinStyle.wdStyleNormal);
+                Word.Style style;
+
+                style = doc.GetStyle("图表");
+                if (style is null)
                 {
-                    paragraphStyle = doc.Styles.Add(
-                        "图表",
-                        Word.WdStyleType.wdStyleTypeParagraphOnly
-                    );
-                    paragraphStyle.set_BaseStyle(doc.GetStyle(Word.WdBuiltinStyle.wdStyleNormal));
-                    paragraphStyle.ParagraphFormat.Alignment =
+                    style = doc.Styles.Add("图表", Word.WdStyleType.wdStyleTypeParagraphOnly);
+                    style.set_BaseStyle(styleNormal);
+                    style.ParagraphFormat.Alignment =
                         Word.WdParagraphAlignment.wdAlignParagraphCenter;
-                    paragraphStyle.ParagraphFormat.KeepWithNext = -1;
+                    style.ParagraphFormat.KeepWithNext = -1;
                 }
 
-                paragraphStyle = doc.GetStyle("正文段落");
-                if (paragraphStyle is null)
+                style = doc.GetStyle("正文段落");
+                if (style is null)
                 {
-                    paragraphStyle = doc.Styles.Add(
-                        "正文段落",
-                        Word.WdStyleType.wdStyleTypeParagraphOnly
-                    );
-                    paragraphStyle.set_BaseStyle(doc.GetStyle(Word.WdBuiltinStyle.wdStyleNormal));
-                    paragraphStyle.ParagraphFormat.FirstLineIndent = 20; // todo: the first line indent is not accurate
+                    style = doc.Styles.Add("正文段落", Word.WdStyleType.wdStyleTypeParagraphOnly);
+                    style.set_BaseStyle(styleNormal);
+                    style.set_NextParagraphStyle(styleNormal);
+                    style.ParagraphFormat.FirstLineIndent = styleNormal.Font.Size * 2;
                 }
             }
 

@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Windows.Forms;
-using EssayAssistant.Forms;
+using EssayAssistant.Extensions;
+using EssayAssistant.Forms.Picture;
+using EssayAssistant.Utils;
 using Microsoft.Office.Tools.Ribbon;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -8,7 +10,7 @@ namespace EssayAssistant
 {
     public partial class RibbonEssayAssistant
     {
-        #region Operate Styles
+        #region Style
 
         private void ButtonViewStyleTree_Click(object sender, RibbonControlEventArgs e)
         {
@@ -19,9 +21,29 @@ namespace EssayAssistant
 
         #endregion
 
-        #region Operate Figures
+        #region Character
 
-        private void ButtonInsertFigures_Click(object sender, RibbonControlEventArgs e)
+        private void ButtonCorrectCharacterFormat_Click(object sender, RibbonControlEventArgs e) { }
+
+        private void ButtonCorrectPunctuation_Click(object sender, RibbonControlEventArgs e) { }
+
+        private void ButtonCorrectWordSpacing_Click(object sender, RibbonControlEventArgs e)
+        {
+            var selection = Globals.ThisAddIn.Application.Selection;
+            Character.CorrectWordSpacing(selection.Range);
+        }
+
+        private void ButtonSelectCJHChar_Click(object sender, RibbonControlEventArgs e)
+        {
+            var selection = Globals.ThisAddIn.Application.Selection;
+            selection.Range.SelectCJKChar();
+        }
+
+        #endregion
+
+        #region Picture
+
+        private void ButtonInsertPictures_Click(object sender, RibbonControlEventArgs e)
         {
             var dialog = Globals.ThisAddIn.Application.Dialogs[
                 Word.WdWordDialog.wdDialogInsertPicture
@@ -29,7 +51,7 @@ namespace EssayAssistant
             dialog.Show();
         }
 
-        private void ButtonArrangeFigures_Click(object sender, RibbonControlEventArgs e)
+        private void ButtonArrangePictures_Click(object sender, RibbonControlEventArgs e)
         {
             var selection = Globals.ThisAddIn.Application.Selection;
             var inlineShapes = selection
@@ -58,11 +80,11 @@ namespace EssayAssistant
             }
             selection.Range.InsertParagraphAfter();
 
-            var form = new FormArrangeFigures(inlineShapes, selection.Range.End - 1);
+            var form = new FormArrangePictures(inlineShapes, selection.Range.End - 1);
             form.ShowDialog();
         }
 
-        private void ButtonSetFigureSizes_Click(object sender, RibbonControlEventArgs e)
+        private void ButtonSetPicturesSizes_Click(object sender, RibbonControlEventArgs e)
         {
             var selection = Globals.ThisAddIn.Application.Selection;
             var inlineShapes = selection
@@ -90,11 +112,11 @@ namespace EssayAssistant
                 return;
             }
 
-            var form = new FormSetFigureSizes(inlineShapes);
+            var form = new FormSetFigurePictures(inlineShapes);
             form.ShowDialog();
         }
 
-        private void ButtonReplaceFigures_Click(object sender, RibbonControlEventArgs e)
+        private void ButtonReplacePictures_Click(object sender, RibbonControlEventArgs e)
         {
             var selection = Globals.ThisAddIn.Application.Selection;
             var inlineShapes = selection
@@ -122,7 +144,7 @@ namespace EssayAssistant
                 return;
             }
 
-            var form = new FormReplaceFigures(inlineShapes);
+            var form = new FormReplacePictures(inlineShapes);
             form.ShowDialog();
         }
 

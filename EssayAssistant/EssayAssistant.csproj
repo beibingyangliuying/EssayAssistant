@@ -94,6 +94,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <!--
     This section defines properties that are set when the "Release" configuration is selected.
@@ -118,6 +119,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
     <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
@@ -213,37 +215,42 @@
   <ItemGroup>
     <Compile Include="Extensions\DocumentExtension.cs" />
     <Compile Include="Extensions\InlineShapeExtension.cs" />
+    <Compile Include="Extensions\RangeExtension.cs" />
     <Compile Include="Extensions\TableExtension.cs" />
-    <Compile Include="Forms\FormArrangeFigures.cs">
+    <Compile Include="Forms\Picture\FormArrangePictures.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormArrangeFigures.Designer.cs">
-      <DependentUpon>FormArrangeFigures.cs</DependentUpon>
+    <Compile Include="Forms\Picture\FormArrangePictures.Designer.cs">
+      <DependentUpon>FormArrangePictures.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormReplaceFigures.cs">
+    <Compile Include="Forms\Picture\FormReplacePictures.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormReplaceFigures.Designer.cs">
-      <DependentUpon>FormReplaceFigures.cs</DependentUpon>
+    <Compile Include="Forms\Picture\FormReplacePictures.Designer.cs">
+      <DependentUpon>FormReplacePictures.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormSetFigureSizes.cs">
+    <Compile Include="Forms\Picture\FormSetFigurePictures.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormSetFigureSizes.Designer.cs">
-      <DependentUpon>FormSetFigureSizes.cs</DependentUpon>
+    <Compile Include="Forms\Picture\FormSetFigurePictures.Designer.cs">
+      <DependentUpon>FormSetFigurePictures.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Utils\MeasureUnitCalculator.cs" />
-    <EmbeddedResource Include="Forms\FormArrangeFigures.resx">
-      <DependentUpon>FormArrangeFigures.cs</DependentUpon>
+    <Compile Include="Utils\Character.cs" />
+    <Compile Include="Utils\MeasureUnit.cs" />
+    <EmbeddedResource Include="Forms\Picture\FormArrangePictures.resx">
+      <DependentUpon>FormArrangePictures.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormReplaceFigures.resx">
-      <DependentUpon>FormReplaceFigures.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Picture\FormReplacePictures.en-US.resx">
+      <DependentUpon>FormReplacePictures.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormSetFigureSizes.resx">
-      <DependentUpon>FormSetFigureSizes.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Picture\FormReplacePictures.resx">
+      <DependentUpon>FormReplacePictures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Picture\FormSetFigurePictures.resx">
+      <DependentUpon>FormSetFigurePictures.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -299,7 +306,7 @@
     <ManifestKeyFile>EssayAssistant_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>4C07378E01D9493E518E0B4FD05CBA98039BB857</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C80A0DF9D59CF309B6B4C12F91AD9844243F55A8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

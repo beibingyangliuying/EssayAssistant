@@ -4,9 +4,9 @@ using System.Windows.Forms;
 using EssayAssistant.Extensions;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace EssayAssistant.Forms
+namespace EssayAssistant.Forms.Picture
 {
-    public partial class FormArrangeFigures : Form
+    public partial class FormArrangePictures : Form
     {
         private readonly List<Word.InlineShape> _shapes;
         private readonly int _start;
@@ -19,7 +19,7 @@ namespace EssayAssistant.Forms
             doc.Init(DocumentInitType.Style);
         }
 
-        public FormArrangeFigures(List<Word.InlineShape> shapes, int start)
+        public FormArrangePictures(List<Word.InlineShape> shapes, int start)
         {
             InitializeComponent();
 
